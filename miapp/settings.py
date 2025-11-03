@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # BASE_DIR apunta a la carpeta principal del proyecto
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,9 +80,9 @@ USE_TZ = True
 
 # Archivos estáticos (CSS, JS, imágenes)
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',   # 🔧 corregido: usa "/" en lugar de "\"
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Carpeta para archivos subidos (opcional)
 MEDIA_URL = '/media/'
