@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Menú principal{% endblock %}
+{% block content %}
+<div class="card shadow p-4">
+  <h3 class="mb-3 text-center">Menú principal</h3>
+  <ul class="list-group">
+    <li class="list-group-item"><a href="{% url 'calificaciones' %}">Consulta de calificaciones</a></li>
+    <li class="list-group-item"><a href="{% url 'avisos' %}">Avisos (comunidad)</a></li>
+    <li class="list-group-item"><a href="{% url 'servicio' %}">Horas de servicio y prácticas</a></li>
+  </ul>
+  <div class="text-center mt-3">
+    <a href="{% url 'logout' %}" class="btn btn-danger">Cerrar sesión</a>
+  </div>
+</div>
+{% endblock %}
